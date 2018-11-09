@@ -1,0 +1,40 @@
+<div class="sidenav">
+    <div class="sidenav__section sidenav__section sidenav_action-menu">
+      <app-create-menu [expanded]="showLabel"></app-create-menu>
+    </div>
+
+    <div *ngFor="let group of groups; trackBy: trackById"
+        class="sidenav__section sidenav__section--menu" >
+        <ul class="sidenav-menu">
+            <li *ngFor="let item of group.items; trackBy: trackById"
+                class="sidenav-menu__item"
+                routerLinkActive
+                #rla="routerLinkActive"
+                [attr.title]="item.description | translate">
+
+                <button
+                    [id]="item.id"
+                    mat-icon-button
+                    mat-ripple
+                    [routerLink]="item.url"
+                    [color]="rla.isActive ? 'accent': 'primary'"
+                    [attr.aria-label]="item.title | translate"
+                    matRippleColor="primary"
+                    [matRippleTrigger]="rippleTrigger"
+                    [matRippleCentered]="true">
+
+                    <mat-icon>{{ item.icon }}</mat-icon>
+                </button>
+
+                <span #rippleTrigger
+                    [routerLink]="item.url"
+                    class="menu__item--label"
+                    [hidden]="!showLabel"
+                    [ngClass]="{
+                        'menu__item--active': rla.isActive,
+                        'menu__item--default': !rla.isActive
+                    }">{{ item.title | translate }}</span>
+            </li>
+        </ul>
+    </div>
+</div>
