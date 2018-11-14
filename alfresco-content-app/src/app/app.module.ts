@@ -65,6 +65,7 @@ import { AppSearchInputModule } from './components/search/search-input.module';
 import { AppSearchResultsModule } from './components/search/search-results.module';
 import { AppLoginModule } from './components/login/login.module';
 import { AppHeaderModule } from './components/header/header.module';
+import { SampleComponent } from './components/sample/sample.component';
 
 @NgModule({
   imports: [
@@ -104,7 +105,8 @@ import { AppHeaderModule } from './components/header/header.module';
     FilesComponent,
     LibrariesComponent,
     NodeVersionsDialogComponent,
-    LibraryDialogComponent
+    LibraryDialogComponent,
+    SampleComponent
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: AppRouteReuseStrategy },
@@ -121,4 +123,4 @@ import { AppHeaderModule } from './components/header/header.module';
   entryComponents: [LibraryDialogComponent, NodeVersionsDialogComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

@@ -56,7 +56,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
   constructor(
     private store: Store<AppStore>,
     private extensions: AppExtensionService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.store

@@ -32,6 +32,7 @@ import { SearchResultsComponent } from './components/search/search-results/searc
 import { LoginComponent } from './components/login/login.component';
 import { AppAuthGuard } from './guards/auth.guard';
 import { AppSharedRuleGuard } from './guards/shared.guard';
+import { SampleComponent } from './components/sample/sample.component';
 
 export const APP_ROUTES: Routes = [
   {
@@ -59,6 +60,10 @@ export const APP_ROUTES: Routes = [
         path: '',
         redirectTo: `/personal-files`,
         pathMatch: 'full'
+      },
+      {
+        path: 'sample-route',
+        component: SampleComponent
       },
       {
         path: 'favorites',
